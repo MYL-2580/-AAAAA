@@ -1,0 +1,796 @@
+/* 旅游攻略网站样式 */
+/* 通用选择器，对所有元素应用以下样式 */
+* {
+    /* 外边距设置为 0 */
+    margin: 0;
+    /* 内边距设置为 0 */
+    padding: 0;
+    /* 盒模型计算方式设置为 border-box，即宽度和高度包含内容、内边距和边框，但不包含外边距 */
+    box-sizing: border-box;
+    /* 字体设置为楷体 */
+    font-family: '楷体', serif;
+}
+
+/* General styles */
+/* 对 body 元素应用以下样式 */
+body {
+    /* 行高设置为 1.6 */
+    line-height: 1.6;
+    /* 背景颜色设置为 #F5F5DC */
+    background-color: #F5F5DC;
+    /* 文字颜色设置为 #8B4513 */
+    color: #8B4513;
+    /* 应用名为 fadeIn 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 定义名为 fadeIn 的动画，从透明度为 0 变为透明度为 1 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 类名为 container 的元素样式 */
+.container {
+    /* 最大宽度设置为 1200px */
+    max-width: 1200px;
+    /* 水平居中显示 */
+    margin: 0 auto;
+    /* 内边距设置为 20px */
+    padding: 20px;
+}
+
+/* header 元素样式 */
+header {
+    /* 文字居中对齐 */
+    text-align: center;
+    /* 底部外边距设置为 30px */
+    margin-bottom: 30px;
+}
+
+/* header 元素下的 h1 元素样式 */
+header h1 {
+    /* 字体大小设置为 2.8em */
+    font-size: 2.8em;
+    /* 字体加粗 */
+    font-weight: bold;
+    /* 文字颜色设置为 #8B4513 */
+    color: #8B4513;
+    /* 文字阴影，水平偏移 2px，垂直偏移 2px，颜色为 #D2B48C */
+    text-shadow: 2px 2px #D2B48C;
+    /* 底部外边距设置为 15px */
+    margin-bottom: 15px;
+    /* 应用名为 slideDown 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: slideDown 1s ease-in-out;
+}
+
+/* 定义名为 slideDown 的动画，从向上偏移 50px 且透明度为 0 变为正常位置且透明度为 1 */
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* header 元素下的 p 元素样式 */
+header p {
+    /* 字体大小设置为 1.3em */
+    font-size: 1.3em;
+    /* 文字颜色设置为 #A0522D */
+    color: #A0522D;
+    /* 底部外边距设置为 20px */
+    margin-bottom: 20px;
+    /* 应用名为 slideUp 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: slideUp 1s ease-in-out;
+}
+
+/* 定义名为 slideUp 的动画，从向下偏移 50px 且透明度为 0 变为正常位置且透明度为 1 */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Search container */
+/* 类名为 search-container 的元素样式 */
+.search-container {
+    /* 背景颜色设置为白色 */
+    background: #fff;
+    /* 内边距设置为 20px */
+    padding: 20px;
+    /* 边框圆角设置为 8px */
+    border-radius: 8px;
+    /* 盒子阴影，水平偏移 0，垂直偏移 2px，模糊半径 4px，颜色为 rgba(0, 0, 0, 0.1) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 底部外边距设置为 30px */
+    margin-bottom: 30px;
+    /* 应用名为 scaleIn 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: scaleIn 1s ease-in-out;
+}
+
+/* 定义名为 scaleIn 的动画，从缩放比例为 0.9 且透明度为 0 变为缩放比例为 1 且透明度为 1 */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* 类名为 search-container 的元素下的 h2 元素样式 */
+.search-container h2 {
+    /* 文字居中对齐 */
+    text-align: center;
+    /* 底部外边距设置为 15px */
+    margin-bottom: 15px;
+    /* 文字颜色设置为 #333 */
+    color: #333;
+}
+
+/* 类名为 suggestion-list 的元素样式 */
+.suggestion-list {
+    /* 定位方式设置为绝对定位 */
+    position: absolute;
+    /* 顶部与父元素顶部对齐 */
+    top: 100%;
+    /* 左侧与父元素左侧对齐 */
+    left: 0;
+    /* 右侧与父元素右侧对齐 */
+    right: 0;
+    /* 背景颜色设置为白色 */
+    background: #fff;
+    /* 边框设置为 1px 实线 #ccc */
+    border: 1px solid #ccc;
+    /* 边框圆角设置为 5px */
+    border-radius: 5px;
+    /* 最大高度设置为 200px */
+    max-height: 200px;
+    /* 垂直方向溢出时显示滚动条 */
+    overflow-y: auto;
+    /* 元素层级设置为 1000 */
+    z-index: 1000;
+}
+
+/* 类名为 suggestion-item 的元素样式 */
+.suggestion-item {
+    /* 内边距设置为 10px */
+    padding: 10px;
+    /* 鼠标指针样式设置为手型 */
+    cursor: pointer;
+    /* 背景颜色过渡效果，过渡时长 0.3 秒 */
+    transition: background-color 0.3s;
+}
+
+/* 类名为 suggestion-item 的元素鼠标悬停时的样式 */
+.suggestion-item:hover {
+    /* 背景颜色设置为 #f0f0f0 */
+    background-color: #f0f0f0;
+}
+
+/* Image gallery */
+/* 类名为 image-gallery 的元素样式 */
+.image-gallery {
+    /* 背景颜色设置为白色 */
+    background: #fff;
+    /* 内边距设置为 20px */
+    padding: 20px;
+    /* 边框圆角设置为 8px */
+    border-radius: 8px;
+    /* 盒子阴影，水平偏移 0，垂直偏移 2px，模糊半径 4px，颜色为 rgba(0, 0, 0, 0.1) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 底部外边距设置为 30px */
+    margin-bottom: 30px;
+    /* 应用名为 fadeIn 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 类名为 image-gallery 的元素下的 h2 元素样式 */
+.image-gallery h2 {
+    /* 文字居中对齐 */
+    text-align: center;
+    /* 底部外边距设置为 15px */
+    margin-bottom: 15px;
+    /* 文字颜色设置为 #333 */
+    color: #333;
+}
+
+/* 类名为 gallery-container 的元素样式 */
+.gallery-container {
+    /* 元素布局方式设置为 flex 布局 */
+    display: flex;
+    /* 垂直方向居中对齐 */
+    align-items: center;
+    /* 水平方向居中对齐 */
+    justify-content: center;
+    /* 元素之间的间距设置为 10px */
+    gap: 10px;
+}
+
+/* 类名为 gallery-button 的元素样式 */
+.gallery-button {
+    /* 字体大小设置为 1.1em */
+    font-size: 1.1em;
+    /* 字体加粗 */
+    font-weight: bold;
+    /* 背景颜色设置为 #8B4513 */
+    background-color: #8B4513;
+    /* 文字颜色设置为 #F5F5DC */
+    color: #F5F5DC;
+    /* 边框设置为 2px 实线 #A0522D */
+    border: 2px solid #A0522D;
+    /* 边框圆角设置为 50%，使其成为圆形 */
+    border-radius: 50%;
+    /* 宽度设置为 40px */
+    width: 40px;
+    /* 高度设置为 40px */
+    height: 40px;
+    /* 鼠标指针样式设置为手型 */
+    cursor: pointer;
+    /* 盒子阴影，水平偏移 0，垂直偏移 4px，模糊半径 6px，颜色为 rgba(0, 0, 0, 0.1) */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 背景颜色过渡效果，过渡时长 0.3 秒 */
+    transition: background-color 0.3s;
+}
+
+/* 类名为 gallery-button 的元素鼠标悬停时的样式 */
+.gallery-button:hover {
+    /* 背景颜色设置为 #A0522D */
+    background-color: #A0522D;
+    /* 元素放大 1.1 倍 */
+    transform: scale(1.1);
+}
+
+/* Enhanced Image Gallery Styles */
+/* 类名为 gallery-images 的元素样式 */
+.gallery-images {
+    /* 元素布局方式设置为 flex 布局 */
+    display: flex;
+    /* 元素之间的间距设置为 20px */
+    gap: 20px;
+    /* 水平方向溢出时显示滚动条 */
+    overflow-x: auto;
+    /* 内边距设置为 20px */
+    padding: 20px;
+    /* 水平方向居中对齐 */
+    justify-content: center;
+    /* 垂直方向居中对齐 */
+    align-items: center;
+    /* 滚动行为设置为平滑滚动 */
+    scroll-behavior: smooth;
+}
+
+/* 类名为 gallery-item 的元素样式 */
+.gallery-item {
+    /* 定位方式设置为相对定位 */
+    position: relative;
+    /* 元素收缩比例设置为 0，即不收缩 */
+    flex-shrink: 0;
+    /* 宽度设置为 300px */
+    width: 300px;
+    /* 高度设置为 200px */
+    height: 200px;
+    /* 边框圆角设置为 10px */
+    border-radius: 10px;
+    /* 溢出内容隐藏 */
+    overflow: hidden;
+    /* 盒子阴影，水平偏移 0，垂直偏移 4px，模糊半径 8px，颜色为 rgba(0, 0, 0, 0.2) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 元素变换和盒子阴影过渡效果，过渡时长 0.3 秒 */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* 应用名为 slideLeft 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: slideLeft 1s ease-in-out;
+}
+
+/* 定义名为 slideLeft 的动画，从向左偏移 50px 且透明度为 0 变为正常位置且透明度为 1 */
+@keyframes slideLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* 类名为 gallery-item 的元素鼠标悬停时的样式 */
+.gallery-item:hover {
+    /* 元素放大 1.1 倍 */
+    transform: scale(1.1);
+    /* 盒子阴影，水平偏移 0，垂直偏移 6px，模糊半径 12px，颜色为 rgba(0, 0, 0, 0.3) */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 类名为 gallery-item 的元素下的 img 元素样式 */
+.gallery-item img {
+    /* 宽度设置为 100% */
+    width: 100%;
+    /* 高度设置为 100% */
+    height: 100%;
+    /* 图片填充方式设置为 cover，即保持图片比例填充元素 */
+    object-fit: cover;
+    /* 图片透明度过渡效果，过渡时长 0.3 秒 */
+    transition: opacity 0.3s;
+}
+
+/* 类名为 gallery-item 的元素下的 img 元素鼠标悬停时的样式 */
+.gallery-item:hover img {
+    /* 图片透明度设置为 0.9 */
+    opacity: 0.9;
+}
+
+/* 类名为 gallery-caption 的元素样式 */
+.gallery-caption {
+    /* 定位方式设置为绝对定位 */
+    position: absolute;
+    /* 底部与父元素底部对齐 */
+    bottom: 0;
+    /* 左侧与父元素左侧对齐 */
+    left: 0;
+    /* 宽度设置为 100% */
+    width: 100%;
+    /* 背景颜色设置为 rgba(0, 0, 0, 0.6) */
+    background: rgba(0, 0, 0, 0.6);
+    /* 文字颜色设置为 #F5F5DC */
+    color: #F5F5DC;
+    /* 文字居中对齐 */
+    text-align: center;
+    /* 内边距设置为 10px */
+    padding: 10px;
+    /* 字体大小设置为 1.1em */
+    font-size: 1.1em;
+    /* 字体加粗 */
+    font-weight: bold;
+    /* 文字阴影，水平偏移 1px，垂直偏移 1px，模糊半径 2px，颜色为 rgba(0, 0, 0, 0.8) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    /* 元素变换过渡效果，过渡时长 0.3 秒 */
+    transition: transform 0.3s;
+}
+
+/* 类名为 gallery-item 的元素鼠标悬停时，其下的 gallery-caption 元素样式 */
+.gallery-item:hover .gallery-caption {
+    /* 元素向上偏移 10px */
+    transform: translateY(-10px);
+}
+
+/* 统一图片样式 */
+/* 类名为 gallery-images 的元素下的 img 元素和类名为 attraction-image 的元素样式 */
+.gallery-images img,
+.attraction-image {
+    /* 宽度设置为 300px */
+    width: 300px;
+    /* 高度设置为 200px */
+    height: 200px;
+    /* 图片填充方式设置为 cover，即保持图片比例填充元素 */
+    object-fit: cover;
+    /* 边框圆角设置为 8px */
+    border-radius: 8px;
+    /* 盒子阴影，水平偏移 0，垂直偏移 2px，模糊半径 4px，颜色为 rgba(0, 0, 0, 0.1) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 元素变换和盒子阴影过渡效果，过渡时长 0.3 秒 */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* 类名为 gallery-images 的元素下的 img 元素和类名为 attraction-image 的元素鼠标悬停时的样式 */
+.gallery-images img:hover,
+.attraction-image:hover {
+    /* 元素放大 1.05 倍 */
+    transform: scale(1.05);
+    /* 盒子阴影，水平偏移 0，垂直偏移 4px，模糊半径 8px，颜色为 rgba(0, 0, 0, 0.2) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Form styles */
+/* form 元素样式 */
+form {
+    /* 背景颜色设置为白色 */
+    background: #fff;
+    /* 内边距设置为 20px */
+    padding: 20px;
+    /* 边框圆角设置为 8px */
+    border-radius: 8px;
+    /* 盒子阴影，水平偏移 0，垂直偏移 2px，模糊半径 4px，颜色为 rgba(0, 0, 0, 0.1) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 底部外边距设置为 30px */
+    margin-bottom: 30px;
+    /* 应用名为 scaleIn 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: scaleIn 1s ease-in-out;
+}
+
+/* 类名为 form-section 的元素样式 */
+.form-section {
+    /* 底部外边距设置为 20px */
+    margin-bottom: 20px;
+}
+
+/* 类名为 form-section 的元素下的 h2 元素样式 */
+.form-section h2 {
+    /* 底部外边距设置为 10px */
+    margin-bottom: 10px;
+    /* 文字颜色设置为 #333 */
+    color: #333;
+}
+
+/* 类名为 form-group 的元素样式 */
+.form-group {
+    /* 底部外边距设置为 15px */
+    margin-bottom: 15px;
+}
+
+/* label 元素样式 */
+label {
+    /* 字体大小设置为 1.1em */
+    font-size: 1.1em;
+    /* 文字颜色设置为 #333 */
+    color: #333;
+    /* 底部外边距设置为 5px */
+    margin-bottom: 5px;
+    /* 元素显示方式设置为块级元素 */
+    display: block;
+}
+
+/* input 元素和 select 元素样式 */
+input,
+select {
+    /* 字体大小设置为 1em */
+    font-size: 1em;
+    /* 内边距设置为 10px */
+    padding: 10px;
+    /* 边框设置为 1px 实线 #ccc */
+    border: 1px solid #ccc;
+    /* 边框圆角设置为 5px */
+    border-radius: 5px;
+    /* 宽度设置为 100% */
+    width: 100%;
+    /* 盒模型计算方式设置为 border-box，即宽度和高度包含内容、内边距和边框，但不包含外边距 */
+    box-sizing: border-box;
+    /* 底部外边距设置为 10px */
+    margin-bottom: 10px;
+}
+
+/* select 元素样式 */
+select {
+    /* 去除浏览器默认样式 */
+    appearance: none;
+    /* 设置背景图片，为一个向下箭头 */
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23333" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>') no-repeat right 10px center;
+    /* 背景颜色设置为白色 */
+    background-color: white;
+    /* 背景图片大小设置为 10px */
+    background-size: 10px;
+}
+
+/* 类名为 checkbox-group 和 radio-group 的元素样式 */
+.checkbox-group,
+.radio-group {
+    /* 元素布局方式设置为 flex 布局 */
+    display: flex;
+    /* 元素换行显示 */
+    flex-wrap: wrap;
+    /* 元素之间的间距设置为 10px */
+    gap: 10px;
+}
+
+/* 类名为 checkbox-item 和 radio-item 的元素样式 */
+.checkbox-item,
+.radio-item {
+    /* 元素布局方式设置为 flex 布局 */
+    display: flex;
+    /* 垂直方向居中对齐 */
+    align-items: center;
+    /* 元素之间的间距设置为 5px */
+    gap: 5px;
+}
+
+/* 类名为 checkbox-item 和 radio-item 的元素下的 label 元素样式 */
+.checkbox-item label,
+.radio-item label {
+    /* 字体大小设置为 1em */
+    font-size: 1em;
+    /* 文字颜色设置为 #333 */
+    color: #333;
+}
+
+/* 类型为 submit 的 button 元素样式 */
+button[type="submit"] {
+    /* 字体大小设置为 1.1em */
+    font-size: 1.1em;
+    /* 字体加粗 */
+    font-weight: bold;
+    /* 背景颜色设置为 #8B4513 */
+    background-color: #8B4513;
+    /* 文字颜色设置为 #F5F5DC */
+    color: #F5F5DC;
+    /* 边框设置为 2px 实线 #A0522D */
+    border: 2px solid #A0522D;
+    /* 边框圆角设置为 5px */
+    border-radius: 5px;
+    /* 内边距设置为 10px 20px */
+    padding: 10px 20px;
+    /* 鼠标指针样式设置为手型 */
+    cursor: pointer;
+    /* 背景颜色过渡效果，过渡时长 0.3 秒 */
+    transition: background-color 0.3s;
+    /* 元素显示方式设置为块级元素 */
+    display: block;
+    /* 水平居中显示 */
+    margin: 0 auto;
+}
+
+/* 类型为 submit 的 button 元素鼠标悬停时的样式 */
+button[type="submit"]:hover {
+    /* 背景颜色设置为 #A0522D */
+    background-color: #A0522D;
+}
+
+/* Results container */
+/* 类名为 results-container 的元素样式 */
+.results-container {
+    /* 背景颜色设置为白色 */
+    background: #fff;
+    /* 内边距设置为 20px */
+    padding: 20px;
+    /* 边框圆角设置为 8px */
+    border-radius: 8px;
+    /* 盒子阴影，水平偏移 0，垂直偏移 2px，模糊半径 4px，颜色为 rgba(0, 0, 0, 0.1) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 底部外边距设置为 30px */
+    margin-bottom: 30px;
+}
+
+/* 类名为 results-container 的元素下的 h2 元素样式 */
+.results-container h2 {
+    /* 字体大小设置为 1.8em */
+    font-size: 1.8em;
+    /* 文字颜色设置为 #2E8B57 */
+    color: #2E8B57;
+    /* 底部外边距设置为 15px */
+    margin-bottom: 15px;
+}
+
+/* Footer */
+/* footer 元素样式 */
+footer {
+    /* 文字居中对齐 */
+    text-align: center;
+    /* 内边距设置为 10px */
+    padding: 10px;
+    /* 背景颜色设置为 #8B4513 */
+    background: #8B4513;
+    /* 文字颜色设置为 #F5F5DC */
+    color: #F5F5DC;
+    /* 顶部外边距设置为 30px */
+    margin-top: 30px;
+    /* 顶部边框设置为 5px 实线 #A0522D */
+    border-top: 5px solid #A0522D;
+    /* 应用名为 fadeIn 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Northwest Style Theme */
+/* 类名为 northwest-theme 的 body 元素样式 */
+body.northwest-theme {
+    /* 背景颜色设置为 #F5F5DC */
+    background-color: #F5F5DC;
+}
+
+/* 类名为 northwest-theme 的 header 元素样式 */
+header.northwest-theme {
+    /* 背景颜色设置为 #DEB887 */
+    background-color: #DEB887;
+    /* 内边距设置为 20px */
+    padding: 20px;
+    /* 底部边框设置为 5px 实线 #8B4513 */
+    border-bottom: 5px solid #8B4513;
+}
+
+/* 类名为 northwest-theme 的 header 元素下的 h1 元素样式 */
+header.northwest-theme h1 {
+    /* 文字颜色设置为 #8B4513 */
+    color: #8B4513;
+    /* 文字阴影，水平偏移 2px，垂直偏移 2px，颜色为 #D2B48C */
+    text-shadow: 2px 2px #D2B48C;
+}
+
+/* 类名为 northwest-theme 的 header 元素下的 p 元素样式 */
+header.northwest-theme p {
+    /* 文字颜色设置为 #A0522D */
+    color: #A0522D;
+}
+
+/* 类名为 northwest-theme 的 button 元素样式 */
+button.northwest-theme {
+    /* 背景颜色设置为 #8B4513 */
+    background-color: #8B4513;
+    /* 文字颜色设置为 #F5F5DC */
+    color: #F5F5DC;
+    /* 边框设置为 2px 实线 #A0522D */
+    border: 2px solid #A0522D;
+}
+
+/* 类名为 northwest-theme 的 button 元素鼠标悬停时的样式 */
+button.northwest-theme:hover {
+    /* 背景颜色设置为 #A0522D */
+    background-color: #A0522D;
+}
+
+/* Northwest Style Card */
+/* 类名为 northwest-theme 的 card 元素样式 */
+.card.northwest-theme {
+    /* 背景颜色设置为 #F5F5DC */
+    background-color: #F5F5DC;
+    /* 边框设置为 2px 实线 #8B4513 */
+    border: 2px solid #8B4513;
+    /* 边框圆角设置为 10px */
+    border-radius: 10px;
+    /* 盒子阴影，水平偏移 0，垂直偏移 4px，模糊半径 8px，颜色为 rgba(0, 0, 0, 0.2) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* 内边距设置为 20px */
+    padding: 20px;
+    /* 底部外边距设置为 20px */
+    margin-bottom: 20px;
+    /* 元素变换和盒子阴影过渡效果，过渡时长 0.3 秒 */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* 类名为 northwest-theme 的 card 元素鼠标悬停时的样式 */
+.card.northwest-theme:hover {
+    /* 元素放大 1.05 倍 */
+    transform: scale(1.05);
+    /* 盒子阴影，水平偏移 0，垂直偏移 6px，模糊半径 12px，颜色为 rgba(0, 0, 0, 0.3) */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Northwest Style Title Decoration */
+/* 类名为 northwest-theme 的 h2 元素样式 */
+h2.northwest-theme {
+    /* 字体设置为 Georgia  serif 字体 */
+    font-family: '楷体', serif;
+    /* 文字颜色设置为 #8B4513 */
+    color: #8B4513;
+    /* 文字居中对齐 */
+    text-align: center;
+    /* 定位方式设置为相对定位 */
+    position: relative;
+    /* 底部外边距设置为 20px */
+    margin-bottom: 20px;
+}
+
+/* 类名为 northwest-theme 的 h2 元素的伪元素 before 样式 */
+h2.northwest-theme::before,
+/* 类名为 northwest-theme 的 h2 元素的伪元素 after 样式 */
+h2.northwest-theme::after {
+    /* 内容为空 */
+    content: '';
+    /* 元素显示方式设置为块级元素 */
+    display: block;
+    /* 宽度设置为 50px */
+    width: 50px;
+    /* 高度设置为 2px */
+    height: 2px;
+    /* 背景颜色设置为 #8B4513 */
+    background-color: #8B4513;
+    /* 上下外边距设置为 10px，左右外边距自动，即水平居中 */
+    margin: 10px auto;
+}
+
+/* Northwest Style List */
+/* 类名为 northwest-theme 的 ul 元素样式 */
+ul.northwest-theme {
+    /* 去除列表默认样式 */
+    list-style-type: none;
+    /* 内边距设置为 0 */
+    padding: 0;
+}
+
+/* 类名为 northwest-theme 的 ul 元素下的 li 元素样式 */
+ul.northwest-theme li {
+    /* 背景颜色设置为 #DEB887 */
+    background-color: #DEB887;
+    /* 文字颜色设置为 #8B4513 */
+    color: #8B4513;
+    /* 内边距设置为 10px */
+    padding: 10px;
+    /* 底部外边距设置为 10px */
+    margin-bottom: 10px;
+    /* 边框圆角设置为 5px */
+    border-radius: 5px;
+    /* 盒子阴影，水平偏移 0，垂直偏移 2px，模糊半径 4px，颜色为 rgba(0, 0, 0, 0.1) */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 背景颜色和元素变换过渡效果，过渡时长 0.3 秒 */
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* 类名为 northwest-theme 的 ul 元素下的 li 元素鼠标悬停时的样式 */
+ul.northwest-theme li:hover {
+    /* 背景颜色设置为 #A0522D */
+    background-color: #A0522D;
+    /* 元素向右偏移 10px */
+    transform: translateX(10px);
+}
+
+/* 类名为 tag 的元素样式 */
+.tag {
+    /* 元素显示方式设置为内联块级元素 */
+    display: inline-block;
+    /* 背景颜色设置为 #DEB887 */
+    background-color: #DEB887;
+    /* 文字颜色设置为 #8B4513 */
+    color: #8B4513;
+    /* 内边距设置为 5px 10px */
+    padding: 5px 10px;
+    /* 上下外边距设置为 5px */
+    margin: 5px;
+    /* 边框圆角设置为 5px */
+    border-radius: 5px;
+}
+
+/* 类名为 recommendation 的元素样式 */
+.recommendation {
+    /* 背景颜色设置为 #F5F5DC */
+    background-color: #F5F5DC;
+    /* 边框设置为 2px 实线 #8B4513 */
+    border: 2px solid #8B4513;
+    /* 边框圆角设置为 10px */
+    border-radius: 10px;
+    /* 内边距设置为 20px */
+    padding: 20px;
+    /* 底部外边距设置为 20px */
+    margin-bottom: 20px;
+    /* 元素变换和盒子阴影过渡效果，过渡时长 0.3 秒 */
+    transition: transform 0.3s, box-shadow 0.3s;
+    /* 应用名为 fadeIn 的动画，动画时长 1 秒，动画速度曲线为 ease-in-out */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 类名为 recommendation 的元素鼠标悬停时的样式 */
+.recommendation:hover {
+    /* 元素放大 1.05 倍 */
+    transform: scale(1.05);
+    /* 盒子阴影，水平偏移 0，垂直偏移 6px，模糊半径 12px，颜色为 rgba(0, 0, 0, 0.3) */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 类名为 back-button 的元素样式 */
+.back-button {
+    /* 元素显示方式设置为内联块级元素 */
+    display: inline-block;
+    /* 背景颜色设置为 #8B4513 */
+    background-color: #8B4513;
+    /* 文字颜色设置为 #F5F5DC */
+    color: #F5F5DC;
+    /* 边框设置为 2px 实线 #A0522D */
+    border: 2px solid #A0522D;
+    /* 边框圆角设置为 5px */
+    border-radius: 5px;
+    /* 内边距设置为 10px 20px */
+    padding: 10px 20px;
+    /* 上下外边距设置为 10px */
+    margin: 10px;
+    /* 去除下划线 */
+    text-decoration: none;
+    /* 背景颜色过渡效果，过渡时长 0.3 秒 */
+    transition: background-color 0.3s;
+}
+
+/* 类名为 back-button 的元素鼠标悬停时的样式 */
+.back-button:hover {
+    /* 背景颜色设置为 #A0522D */
+    background-color: #A0522D;
+}
